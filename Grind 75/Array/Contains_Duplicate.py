@@ -8,11 +8,11 @@ def containsDuplicate(nums):
 
 # Optimize solution
 def optimized(nums):
-  seen = []
+  seen = set()
   for num in nums:
-    if(seen.count(num) > 0):
-      return True;
-    seen.append(num)
+    if num in seen:
+      return True
+    seen.add(num)
   return False
 
 nums = [1, 2, 3, 1]
